@@ -245,7 +245,9 @@ sudo brew install aircrack-ng
 ### 5. 使用 aircrack-ng 执行破解
 
 ~~~shell
-sudo aircrack-ng -w pwd*.txt -b d0:d7:83:04:4e:b8 /tmp/*.cap
+sudo aircrack-ng -w common.txt -b d0:d7:83:04:4e:b8 /tmp/*.cap
+
+sudo aircrack-ng -w common.txt -b C4:3A:35:77:00:72 /tmp/*.cap
 ~~~
 
 ### Windows
