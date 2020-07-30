@@ -197,7 +197,7 @@ phy0	wlp8s0mon	iwlwifi		Intel Corporation Centrino Wireless-N 2230 (rev c4)
 开始扫描，终端中执行：
 
 ~~~shell
-/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 scan
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport en0 scan
 ~~~
 
 扫描结果会是这样的：
@@ -226,18 +226,26 @@ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Res
 Session saved to /tmp/airportSniff0RjCAO.cap.
 ~~~
 
+查看cap文件中的数据是否被抓取到，输入命令查看：
+
+~~~shell
+sudo aircrack-ng /tmp/*.cap
+~~~
+
+如果要查询的路由列表的 Encryption 值为WPA(1 handshake) ，说明抓取成功，否则要重新抓取。
+
 ### 4. 安装 [aircrack-ng](https://aircrack-ng.org/)
 
 * 使用 [Homebrew](https://brew.sh/) 安装：
 
 ~~~shell
-brew install aircrack-ng
+sudo brew install aircrack-ng
 ~~~
 
 ### 5. 使用 aircrack-ng 执行破解
 
 ~~~shell
-aircrack-ng -w common.txt /tmp/airportSniff0RjCAO.cap
+sudo aircrack-ng -w pwd*.txt -b d0:d7:83:04:4e:b8 /tmp/*.cap
 ~~~
 
 ### Windows
