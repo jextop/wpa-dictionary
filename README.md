@@ -256,4 +256,10 @@ sudo aircrack-ng -w common.txt -b C4:3A:35:77:00:72 /tmp/*.cap
 
 * 使用 [WSL](https://docs.microsoft.com/en-us/windows/wsl/about)
 
+* WSL从Win10复制文件：
+
+~~~shell
+cp /mnt/d/work/wpa-dictionary/rockyou.txt ./
+~~~
+
 ### 更多安装方式参考：[安装 Aircrack-ng](https://aircrack-ng.org/install.html)
